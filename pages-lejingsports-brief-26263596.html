@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>乐竞体育 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f5f6fa;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      color: #1f2937;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #0f1820 0%, #1b2a38 100%);
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 1.8rem;
+      box-shadow: inset 0 -4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .hero h1 {
+      color: #f0f3f8;
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .tagline {
+      color: #b9cbd8;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      max-width: 520px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1.2rem;
+      margin-top: 0.4rem;
+    }
+
+    .wrapper {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* 浅色正文区 */
+    .content-section {
+      background-color: #ffffff;
+      border-radius: 28px 28px 0 0;
+      margin: -2.5rem 1rem 0 1rem;
+      padding: 2.8rem 2rem 3.5rem;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.02), 0 8px 30px rgba(0, 0, 0, 0.03);
+    }
+
+    @media (min-width: 700px) {
+      .content-section {
+        margin: -2.8rem 2.5rem 0 2.5rem;
+        padding: 3.2rem 3.5rem 4rem;
+      }
+    }
+
+    .intro-sentence {
+      font-size: 1.25rem;
+      font-weight: 420;
+      color: #1e2b3a;
+      padding-bottom: 1.2rem;
+      border-bottom: 2px dotted #dde3ec;
+      margin-bottom: 1.8rem;
+    }
+
+    .intro-sentence strong {
+      font-weight: 550;
+      color: #0a1a2a;
+    }
+
+    .lead-paragraph {
+      margin: 1.5rem 0 1.2rem 0;
+    }
+
+    .lead-paragraph a {
+      color: #cc4e2a;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s, color 0.2s;
+    }
+
+    .lead-paragraph a:hover {
+      border-bottom-color: #cc4e2a;
+      color: #9e3b1f;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+      margin: 2.5rem 0;
+    }
+
+    @media (min-width: 600px) {
+      .feature-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .feature-item {
+      background: #f8faff;
+      border-radius: 20px;
+      padding: 1.5rem 1.8rem;
+      border-left: 5px solid #cc4e2a;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      transition: transform 0.2s ease;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .feature-item h3 {
+      font-size: 1.2rem;
+      font-weight: 550;
+      color: #1c2e40;
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-item p {
+      color: #3b4a5a;
+      font-size: 0.95rem;
+    }
+
+    .scenario-note {
+      background: #f2f5fc;
+      padding: 1.8rem 2rem;
+      border-radius: 24px;
+      margin: 2rem 0 1.6rem 0;
+    }
+
+    .scenario-note h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #17222e;
+      margin-bottom: 0.75rem;
+    }
+
+    .scenario-note ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .scenario-note li {
+      padding: 0.4rem 0 0.4rem 1.6rem;
+      position: relative;
+      color: #2c3e50;
+    }
+
+    .scenario-note li::before {
+      content: "·";
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #cc4e2a;
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+    }
+
+    .reminder-box {
+      background: #ffffffec;
+      border: 1px solid #e2e9f2;
+      border-radius: 20px;
+      padding: 1.6rem 2rem;
+      margin: 2.2rem 0 2rem;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .reminder-box p {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .reminder-box a {
+      color: #cc4e2a;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid #cc4e2a40;
+    }
+
+    .reminder-box a:hover {
+      border-bottom: 1px solid #cc4e2a;
+    }
+
+    .closing-remark {
+      background: transparent;
+      border-top: 1px solid #e3eaf3;
+      padding-top: 1.8rem;
+      margin-top: 1.2rem;
+      font-size: 1rem;
+      color: #324257;
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    .closing-remark a {
+      color: #1f2a36;
+      text-decoration: none;
+      border-bottom: 1px solid #b5c4d6;
+      font-weight: 450;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .closing-remark a:hover {
+      color: #cc4e2a;
+      border-bottom-color: #cc4e2a;
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 2.5rem 0 0.8rem;
+      color: #6d7d8e;
+      font-size: 0.85rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* 强调色用于链接 —— 已统一 */
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <h1>乐竞体育</h1>
+    <div class="tagline">一份平实的指南 · 从了解开始</div>
+  </header>
+
+  <div class="wrapper">
+    <main class="content-section">
+
+      <!-- 开场短句 -->
+      <div class="intro-sentence">
+        <strong>慢慢来，比较快。</strong> 找一处安静的角落，花几分钟认识一下这个叫“乐竞体育”的地方。
+      </div>
+
+      <!-- 承接段落（包含链接） -->
+      <div class="lead-paragraph">
+        很多人第一次接触 <a href="https://pages-lejingsports.com">乐竞体育</a> 时，会先翻一翻页面上的内容结构，看看有哪些分类和提示。这其实是个好习惯。与其被各种信息推着走，不如先建立自己的浏览节奏。这个站点没有多余的装饰，但每一处功能入口都经过梳理，你很容易找到想要的方向。
+      </div>
+
+      <div class="lead-paragraph">
+        如果你平时习惯先读简介再看详情，那么直接打开 <a href="https://pages-lejingsports.com">乐竞体育</a> 的主页，从顶部的引导区开始往下浏览就好。每个版块都留了足够的呼吸感，哪怕只是随手滑动，也能大致了解它的构成。
+      </div>
+
+      <!-- 特点列表（卡片式） -->
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h3>结构清晰</h3>
+          <p>信息层级分明，从总览到细节都有自然的过渡，不会让人迷失在一堆链接里。</p>
+        </div>
+        <div class="feature-item">
+          <h3>访问友好</h3>
+          <p>页面加载干净利落，在多数设备上都能顺畅阅读，没有多余弹窗干扰。</p>
+        </div>
+        <div class="feature-item">
+          <h3>内容务实</h3>
+          <p>没有堆砌大段宣传用语，取而代之的是直接可用的说明和提醒。</p>
+        </div>
+        <div class="feature-item">
+          <h3>保持克制</h3>
+          <p>设计上留有余地，让读者自己决定下一步看什么，而不是被牵着走。</p>
+        </div>
+      </div>
+
+      <!-- 场景 / 提示段落 -->
+      <div class="scenario-note">
+        <h2>几个常见的使用场景</h2>
+        <ul>
+          <li>想确认某个功能的位置，直接翻看站内导航。</li>
+          <li>初次了解平台构成，可以顺着首页板块顺序阅读。</li>
+          <li>需要快速回忆操作流程，相关说明通常放在对应区域的显眼处。</li>
+          <li>遇到疑问时，留意页面底部的补充信息，往往能省去额外搜索的时间。</li>
+        </ul>
+      </div>
+
+      <!-- 访问提醒片段 + 链接再次自然出现 -->
+      <div class="reminder-box">
+        <p>
+          <span style="font-weight: 500; color: #1f2937;">☕ 一个小提醒：</span>
+          浏览时不必着急，每个部分都可以慢慢看。如果你已经准备好，随时可以前往
+          <a href="https://pages-lejingsports.com">乐竞体育</a> 开始你的了解。
+        </p>
+      </div>
+
+      <!-- 温和结尾 -->
+      <div class="closing-remark">
+        希望这份简短的指引能帮你省去一些摸索的时间。<br>
+        无论是初次到来还是偶尔回访，都祝浏览顺利。
+        <div style="margin-top: 0.5rem; font-size: 0.9rem;">
+          —— 来自 <a href="https://pages-lejingsports.com">乐竞体育</a> 的一点日常问候
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div class="footer-note">
+    · 乐竞体育 · 页面信息仅供参考 ·
+  </div>
+
+</body>
+</html>
